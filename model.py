@@ -29,7 +29,7 @@ def predict_fraud(transaction_data):
     prediction = model_rf.predict(input_data)
     
     # Return the prediction as a human-readable string
-    return "Fraudulent" if prediction[0] == 1 else "Not Fraudulent"
+    return "Flagged for Suspicion!" if prediction[0] == 1 else "No Suspicious Activity Detected"
 
 # Directory containing the transaction files
 transactions_folder = "/Users/saiperam/Desktop/HackUTD/HackUTD-Fall-2024-Project/transactions"  # Change this to the actual path to your transactions folder
