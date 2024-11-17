@@ -6,7 +6,7 @@ import random
 import joblib
 
 # Step 1: Load the pre-trained model (assuming it's saved)
-model = joblib.load('/Users/saiperam/Desktop/HackUTD/HackUTD-Fall-2024-Project/models/budget_prediction_model.joblib')  # Load the pre-trained model
+model = joblib.load('/Users/saiperam/Desktop/HackUTD/HackUTD-Fall-2024-Project/budget_prediction_model.joblib')  # Load the pre-trained model
 
 # Step 2: Randomize the number of days of recorded data (between 5 and 25 days)
 random_days = random.randint(5, 25)  # Random value between 5 and 20 days
