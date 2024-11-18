@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Credit = () => {
     const navigate = useNavigate(); // Hook for navigation
+
+    // State to store user inputs
+    const [cardInfo, setCardInfo] = useState({
+        cardNumber: '',
+        exp: '',
+        ccv: '',
+    });
+
+    // Handle input changes
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setCardInfo({ ...cardInfo, [name]: value });
+    };
 
     return (
         <div style={{ width: '100%', height: '100%', position: 'relative', background: 'white' }}>
@@ -26,7 +39,7 @@ const Credit = () => {
                     width: 934,
                     height: 154,
                     left: '50%',
-                    top: 46,
+                    top: 60,
                     position: 'absolute',
                     transform: 'translateX(-50%)',
                     textAlign: 'center',
@@ -56,8 +69,8 @@ const Credit = () => {
                 {/* Black Bar */}
                 <div
                     style={{
-                        width: '95%',
-                        height: 92,
+                        width: '100%',
+                        height: 70,
                         position: 'absolute',
                         top: 10,
                         left: '50%',
@@ -73,7 +86,7 @@ const Credit = () => {
                         width: '50%',
                         height: 57,
                         position: 'absolute',
-                        top: 40,
+                        top: 35,
                         left: '50%',
                         transform: 'translateX(-50%)',
                         textAlign: 'center',
@@ -99,71 +112,132 @@ const Credit = () => {
                         transform: 'translateX(-50%)',
                         background: 'white',
                         borderRadius: 20,
+                        padding: '10px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
                     }}
                 >
-                    <div
+                    <label
+                        htmlFor="cardNumber"
                         style={{
-                            width: '50%',
-                            height: '100%',
-                            position: 'absolute',
-                            left: 20,
-                            top: 20,
+                            marginBottom: '5px',
                             color: 'black',
                             fontSize: 20,
                             fontFamily: 'Jomolhari',
                         }}
                     >
                         Credit Card Number:
-                    </div>
+                    </label>
+                    <input
+                        type="text"
+                        id="cardNumber"
+                        name="cardNumber"
+                        value={cardInfo.cardNumber}
+                        onChange={handleInputChange}
+                        style={{
+                            width: '100%',
+                            height: '40px',
+                            borderRadius: '5px',
+                            border: '1px solid #ccc',
+                            padding: '5px',
+                        }}
+                    />
                 </div>
 
                 {/* Expiration and CCV Fields */}
                 <div
                     style={{
-                        width: '40%',
-                        height: 73,
+                        display: 'flex',
+                        justifyContent: 'space-between', // Align boxes with space between them
+                        margin: '0 auto',
                         position: 'absolute',
                         top: 220,
-                        left: '20%',
-                        background: 'white',
-                        borderRadius: 20,
+                        width: '90%',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
                     }}
                 >
+                    {/* Exp Field */}
                     <div
                         style={{
-                            position: 'absolute',
-                            left: 20,
-                            top: 20,
-                            color: 'black',
-                            fontSize: 20,
-                            fontFamily: 'Jomolhari',
+                            width: '48%',
+                            height: 73,
+                            background: 'white',
+                            borderRadius: 20,
+                            padding: '10px',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            marginRight: '10px', // Added margin for spacing
                         }}
                     >
-                        Exp:
+                        <label
+                            htmlFor="exp"
+                            style={{
+                                marginBottom: '5px',
+                                color: 'black',
+                                fontSize: 20,
+                                fontFamily: 'Jomolhari',
+                            }}
+                        >
+                            Exp:
+                        </label>
+                        <input
+                            type="text"
+                            id="exp"
+                            name="exp"
+                            value={cardInfo.exp}
+                            onChange={handleInputChange}
+                            style={{
+                                width: '100%',
+                                height: '40px',
+                                borderRadius: '5px',
+                                border: '1px solid #ccc',
+                                padding: '5px',
+                            }}
+                        />
                     </div>
-                </div>
-                <div
-                    style={{
-                        width: '40%',
-                        height: 73,
-                        position: 'absolute',
-                        top: 220,
-                        left: '55%',
-                        background: 'white',
-                        borderRadius: 20,
-                    }}
-                >
+
+                    {/* CCV Field */}
                     <div
                         style={{
-                            position: 'absolute',
-                            left: 20,
-                            top: 20,
-                            color: 'black',
-                            fontSize: 20,
-                            fontFamily: 'Jomolhari',
+                            width: '48%',
+                            height: 73,
+                            background: 'white',
+                            borderRadius: 20,
+                            padding: '10px',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            marginLeft: '10px', // Added margin for spacing
                         }}
                     >
-                        CCV:
+                        <label
+                            htmlFor="ccv"
+                            style={{
+                                marginBottom: '5px',
+                                color: 'black',
+                                fontSize: 20,
+                                fontFamily: 'Jomolhari',
+                            }}
+                        >
+                            CCV:
+                        </label>
+                        <input
+                            type="text"
+                            id="ccv"
+                            name="ccv"
+                            value={cardInfo.ccv}
+                            onChange={handleInputChange}
+                            style={{
+                                width: '100%',
+                                height: '40px',
+                                borderRadius: '5px',
+                                border: '1px solid #ccc',
+                                padding: '5px',
+                            }}
+                        />
                     </div>
                 </div>
             </div>
@@ -181,7 +255,10 @@ const Credit = () => {
                     borderRadius: 20,
                     cursor: 'pointer',
                 }}
-                onClick={() => navigate('/Budget')} // Navigate to Budget.js
+                onClick={() => {
+                    console.log(cardInfo); // Log user inputs
+                    navigate('/Budget'); // Navigate to Budget.js
+                }}
             >
                 <div
                     style={{

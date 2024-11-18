@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import myImage from './assets/HackLogo-removebg-preview (1).png';
 
 const Login = () => {
     const navigate = useNavigate(); // Hook to handle navigation
@@ -19,6 +20,20 @@ const Login = () => {
 
     return (
         <div style={{ width: '100%', height: '100%', position: 'relative', background: 'white' }}>
+                    {/* Image on the Left */}
+                    <img
+                src={myImage}
+                alt="Hackathon Logo"
+                style={{
+                    position: 'absolute',
+                    top: '270px',
+                    left: '250px',
+                    width: '400px',
+                    height: 'auto',
+                    borderRadius: '10px',
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                }}
+            />
             {/* Header (Quad Core Rectangle) */}
             <div style={{
                 width: 1097,
