@@ -1,9 +1,7 @@
 <h1>QuadCore: Revolutionizing Personal Finance with AI</h1>
 
 Welcome to **QuadCore**, a cutting-edge financial application designed to simplify and enhance your financial decision-making process. Powered by four AI-driven features, QuadCore ensures personalized insights, robust security, and smart investment guidance, all in one intuitive platform.
-
-
-<h2>1. Personalized Budget Advisor</h2>
+<h2>1. 💰 Personalized Budget Advisor</h2>
 Stay ahead of your expenses with our AI-powered budgeting tool!  
 - **What It Does**:  
   - Takes your monthly budget goals as input.  
@@ -15,7 +13,7 @@ Stay ahead of your expenses with our AI-powered budgeting tool!
 
 ---
 
-<h2>2. Security Transaction Monitor</h2>
+<h2>2. 🔒 Security Transaction Monitor</h2>
 Your financial safety is our top priority.  
 - **What It Does**:  
   - Uses a **Random Forest Classifier** to monitor credit card transactions for fraudulent or suspicious activity.  
@@ -26,7 +24,7 @@ Your financial safety is our top priority.
 
 ---
 
-<h2>3. Financial Chatbot</h2>
+<h2>3. 🤖 Financial Chatbot</h2>
 Expert financial advice, available 24/7.  
 - **What It Does**:  
   - Built using **DistilGPT**, a Large Language Model fine-tuned on financial data.  
@@ -37,7 +35,7 @@ Expert financial advice, available 24/7.
 
 ---
 
-<h2>4. Stock Investment Analyzer</h2>
+<h2>4. 📈 Stock Investment Analyzer</h2>
 Empower your investment decisions with data-driven insights.  
 - **What It Does**:  
   - Scrapes data from the **Yahoo Finance API**.  
